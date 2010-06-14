@@ -2,7 +2,7 @@
 <div id="projects_open_content" style="<%%=h show_if_opened(status) %>">
   <%% if projects.length > 0 %>
     <%% for project in projects.sort{|a,b| a.name <=> b.name} %>
-      <a href="<%%= project_path(project) %>" class="menu_link <%%=h active_link_class(project) %>">
+      <a href="<%%= project_path(project) %>" class="menu_link <%%=h active_link_class(project) %>" title="<%%=h project.name %>">
 		    <div class="menu_icons">
 		  
 		  <%%= image_tag('peritor_theme/arrow_menu_right.gif', :width => '20', :height => '20', :border => '0', :style => "#{h( do_not_show_stages_of_project(project))}", :id => "#{h(dom_id(project))}_arrow_right", :onclick => "open_menu('#{h( dom_id(project))}'); return false;" )%>

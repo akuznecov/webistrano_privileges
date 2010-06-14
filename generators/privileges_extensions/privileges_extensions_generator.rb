@@ -23,7 +23,7 @@ class PrivilegesExtensionsGenerator < Rails::Generator::Base
         "#{match}\n    projects.resources :project_users\n"
       end
       
-      m.gsub_file 'app/controllers/application.rb', /(#{Regexp.escape("class ApplicationController < ActionController::Base")})/mi do |match|
+      m.gsub_file 'app/controllers/application_controller.rb', /(#{Regexp.escape("class ApplicationController < ActionController::Base")})/mi do |match|
         "#{match}\n  include WebistranoPrivileges::ControllerExtensions\n  before_filter :setup_privileges\n"
       end
       
